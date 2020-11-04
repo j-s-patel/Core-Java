@@ -1,0 +1,53 @@
+package com.jp.Arrays;
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+//This program is about single dimensional arrays
+public class ReversingArray {
+	
+	static int[] reverseArray(int[] initialArray) {
+		int initialSize = initialArray.length;
+		int[] reverseArray = new int[initialSize];
+		int counter = 0;
+		
+		for(int i=initialSize-1; i>=0; i--) {
+			reverseArray[counter++] = initialArray[i];
+		}
+		
+		return reverseArray;
+	}
+
+	public static void main(String[] args) {
+		int arraySize;
+		int[] initialArray;
+		Scanner sc = new Scanner(System.in);
+		
+		try {
+			//input the size of array
+			arraySize = sc.nextInt();
+			
+			sc.skip("(\r\n)?"); //This line will skip the carriage return and will continue to take input
+			
+			initialArray = new int[arraySize];
+			
+			String[] stringArray = sc.nextLine().split(" "); //space separated values
+			
+			for(int i=0; i<arraySize; i++) {
+				initialArray[i] = Integer.parseInt(stringArray[i]);
+			}
+			
+			int[] reverseArray = reverseArray(initialArray);
+			
+			for(int i=0; i<arraySize; i++) {
+				System.out.print(reverseArray[i] + " ");
+			}
+		}
+		catch(Exception ex) {
+			ex.printStackTrace();
+		}
+		sc.close();
+		
+	}
+
+}

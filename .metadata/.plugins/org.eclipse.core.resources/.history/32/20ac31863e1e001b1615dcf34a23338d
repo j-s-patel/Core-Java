@@ -1,0 +1,40 @@
+package com.jp.Arrays;
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+//This program is about single dimensional arrays
+public class ReversingArray {
+
+	public static void main(String[] args) {
+		int arraySize;
+		int[] initialArray;
+		Scanner sc = new Scanner(System.in);
+		
+		try {
+			//input the size of array
+			arraySize = sc.nextInt();
+			//sc.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
+	        sc.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
+
+			
+			initialArray = new int[arraySize];
+			
+			String[] stringArray = sc.nextLine().split(" ");
+			sc.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
+			
+			for(int i=0; i<arraySize; i++) {
+				initialArray[i] = Integer.parseInt(stringArray[i]);
+				System.out.println(initialArray[i]);
+			}
+			
+			System.out.println(val);
+		}
+		catch(Exception ex) {
+			ex.printStackTrace();
+		}
+		sc.close();
+		
+	}
+
+}
